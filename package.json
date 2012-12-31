@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Replace const declarations with custom values, so an minifier like uglifyjs can remove dead code",
   "main": "index.js",
+  "bin": {
+    "envarconst": "./bin/envarconst.js"
+  },
   "scripts": {
     "test": "node test/run.js"
   },

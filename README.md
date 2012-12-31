@@ -26,7 +26,7 @@ minifies to simply:
 console.log("I have ES5 features");
 ```
 
-Now we can use this, to make, say, an mobile version, with mobile specific code,
+Now we can use this, to make, say, a mobile version, with mobile specific code,
 or special code for development, with `DEV` code.
 
 However, eventually, you want to deploy to production, or to another environment
