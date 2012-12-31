@@ -13,7 +13,8 @@ files.forEach(function(file){
 		assert.ifError(err);
 		code = envarconst(code, {
 			FOO: "false",
-			DEV: '"hellooo"'
+			DEV: '"hellooo"',
+			ES5: "true"
 		});
 		fs.readFile(__dirname + '/' + file + '.result.js', "utf-8", function(err, result){
 			assert.ifError(err);
