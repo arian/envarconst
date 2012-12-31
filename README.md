@@ -80,6 +80,34 @@ envarconst("const FOO = false", {
 }); // "const FOO = true"
 ```
 
+Why Not UglifyJS `--define`
+---------------------------
+
+UglifyJS doesn't replace variables or constants. So those variables defined
+by `--define` are only later specified. This causes problems when you just want
+to use `if (DEV){ ... }`, instead you have to do an extra
+`typeof DEV != 'undefined'` check, which is ugly and too verbose.
+
+But older browsers (IE) don't support `const`
+---------------------------------------------
+
+If you use [wrapup](https://github.com/mootools/wrapup) first, use AMD, or some
+other pattern where your code is always in some
+`(function(){ ... code here ... })();` function scope, UglifyJS will remove
+all `const` declarations!
+
+```
+echo "(function(){ const FOO = true; console.log(FOO ? 'hey' : 'boo'); })();" | uglifyjs -m -c
+```
+
+results in:
+
+```js
+(function(){console.log("hey")})();
+```
+
+which is totally safe!
+
 License
 -------
 
