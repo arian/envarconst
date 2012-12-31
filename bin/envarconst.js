@@ -29,18 +29,18 @@ function setConst(arg){
 }
 
 for (var i = 0; i < args.length; i++){
+	var arg = args[i];
 
-	if (args[i] == "--help" || args[i] == "-h"){
+	if (arg == '-h' || arg == "--help"){
 		help();
-	} else if (args[i] == "--version" || args[i] == "-v"){
+	} else if (arg == "-v" || arg == "--version"){
 		console.log(require("../package.json").version);
 		process.exit(0);
-	} else if (args[i] == "--define" || args[i] == "-d"){
+	} else if (arg == "-d" || arg == "--define"){
 		setConst(args[++i]);
 	} else if (!code){
-		file = args[i];
+		file = arg;
 	}
-
 }
 
 if (file){
