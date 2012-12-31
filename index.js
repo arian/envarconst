@@ -1,6 +1,6 @@
 "use strict";
 
-var esprima = require('esprima');
+var esprima = require("esprima");
 
 function envarconst(code, consts){
 
@@ -24,7 +24,7 @@ function walk(ast, consts, code){
 
 		if (Array.isArray(ast)) for (var i = 0; i < ast.length; i++){
 			_walk(ast[i]);
-		} else if (typeof ast == 'object') for (var k in ast){
+		} else if (typeof ast == "object") for (var k in ast){
 			_walk(ast[k]);
 		}
 	};

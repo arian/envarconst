@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 "use strict";
 
-var fs = require('fs');
-var envarconst = require('../');
+var fs = require("fs");
+var envarconst = require("../");
 
 var args = process.argv.slice(2);
 var file;
@@ -20,22 +20,22 @@ function help(){
 }
 
 function setConst(arg){
-	var parts = arg.split('=');
+	var parts = arg.split("=");
 	if (parts.length <= 1){
 		console.warn(arg + " is not a valid --define option");
 		return;
 	}
-	consts[parts.shift()] = parts.join('=');
+	consts[parts.shift()] = parts.join("=");
 }
 
 for (var i = 0; i < args.length; i++){
 
-	if (args[i] == '--help' || args[i] == '-h'){
+	if (args[i] == "--help" || args[i] == "-h"){
 		help();
-	} else if (args[i] == '--version' || args[i] == '-v'){
-		console.log(require('../package.json').version);
+	} else if (args[i] == "--version" || args[i] == "-v"){
+		console.log(require("../package.json").version);
 		process.exit(0);
-	} else if (args[i] == '--define' || args[i] == '-d'){
+	} else if (args[i] == "--define" || args[i] == "-d"){
 		setConst(args[++i]);
 	} else if (!code){
 		file = args[i];
@@ -58,10 +58,10 @@ if (file){
 	process.stdin.resume();
 	process.stdin.setEncoding("utf-8");
 	var code = "";
-	process.stdin.on('data', function(chunk){
+	process.stdin.on("data", function(chunk){
 		code += chunk;
 	});
-	process.stdin.on('end', function(){
+	process.stdin.on("end", function(){
 		console.log(envarconst(code, consts));
 	});
 
