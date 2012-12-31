@@ -1,0 +1,18 @@
+{
+  "name": "envarconst",
+  "version": "0.0.0",
+  "description": "Replace const declarations with custom values, so an minifier like uglifyjs can remove dead code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arian/envarconst.git"
+  },
+  "author": "Arian Stolwijk",
+  "license": "MIT",
+  "dependencies": {
+    "esprima": "1.0"
+  }
+}
