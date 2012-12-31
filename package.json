@@ -4,7 +4,7 @@
   "description": "Replace const declarations with custom values, so an minifier like uglifyjs can remove dead code",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/run.js"
   },
   "repository": {
     "type": "git",

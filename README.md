@@ -3,6 +3,8 @@ envarconst
 
 Make JavaScript `const` variable.
 
+[![Build Status](https://secure.travis-ci.org/arian/envarconst.png)](https://travis-ci.org/arian/envarconst)
+
 The Idea
 --------
 
